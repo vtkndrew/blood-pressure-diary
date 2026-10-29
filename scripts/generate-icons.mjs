@@ -25,7 +25,7 @@ try {
         canvas.width = canvas.height = size;
         const ctx = canvas.getContext('2d');
 
-        ctx.fillStyle = '#234b3e';
+        ctx.fillStyle = '#172b43';
         ctx.fillRect(0, 0, size, size);
         const logo = new Image();
 

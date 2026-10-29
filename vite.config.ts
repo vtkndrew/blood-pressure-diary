@@ -24,8 +24,8 @@ export default defineConfig(({ command, isPreview }) => ({
         lang: 'ru',
         description: 'Измерения, графики и история самочувствия. На вашем устройстве.',
         display: 'standalone',
-        theme_color: '#f7f8f3',
-        background_color: '#f7f8f3',
+        theme_color: '#f1f4f8',
+        background_color: '#f1f4f8',
         icons: [
           {
             src: 'icons/icon-192.png',

@@ -20,7 +20,7 @@
 }
 .reading {
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 4px;
   padding: 16px;
   margin: 0;
   min-width: 0;
@@ -36,6 +36,8 @@
 }
 .numbers input {
   font-size: 1.25rem;
+  font-family: var(--numeric);
+  font-variant-numeric: tabular-nums;
   text-align: center;
   padding: 12px 4px;
 }

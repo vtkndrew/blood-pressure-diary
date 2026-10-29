@@ -1,15 +1,15 @@
 .dialog {
-  border: 1px solid #d7e1dc;
-  border-radius: 24px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
   padding: 0;
   width: min(680px, calc(100% - 24px));
   max-height: calc(100dvh - 24px);
   color: inherit;
   background: #fff;
-  box-shadow: 0 24px 100px #16392e33;
+  box-shadow: 0 24px 100px #172b4333;
 }
 .dialog::backdrop {
-  background: #193c3370;
+  background: #172b4370;
   backdrop-filter: blur(4px);
 }
 .dialog[open] {
@@ -22,7 +22,7 @@
   justify-content: space-between;
   gap: 12px;
   padding: 16px 24px;
-  border-bottom: 1px solid #e4eae6;
+  border-bottom: 1px solid var(--line);
   flex: none;
 }
 .header h2 {
@@ -45,7 +45,7 @@
     padding: 16px;
   }
   .dialog {
-    border-radius: 18px;
+    border-radius: 6px;
   }
 }
 @media (max-height: 400px) {

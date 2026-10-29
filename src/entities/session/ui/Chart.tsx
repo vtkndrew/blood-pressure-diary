@@ -31,8 +31,8 @@ export function Chart({ sessions, pulse = false }: { sessions: Session[]; pulse?
       >
         {[low, (low + high) / 2, high].map((value) => (
           <g key={value}>
-            <line x1="48" x2="550" y1={y(value)} y2={y(value)} stroke="#dce5df" />
-            <text x="40" y={y(value) + 4} textAnchor="end" fontSize="12" fill="#63766c">
+            <line x1="48" x2="550" y1={y(value)} y2={y(value)} stroke="#cbd5e1" />
+            <text x="40" y={y(value) + 4} textAnchor="end" fontSize="12" fill="#52667c">
               {value}
             </text>
           </g>
@@ -40,8 +40,8 @@ export function Chart({ sessions, pulse = false }: { sessions: Session[]; pulse?
         {keys.map((key, index) => (
           <g
             key={key}
-            fill={pulse ? '#b46b54' : ['#2b6855', '#8fa862'][index]}
-            stroke={pulse ? '#b46b54' : ['#2b6855', '#8fa862'][index]}
+            fill={pulse ? '#6b43a1' : ['#245cba', '#568195'][index]}
+            stroke={pulse ? '#6b43a1' : ['#245cba', '#568195'][index]}
           >
             <polyline
               points={points
@@ -50,6 +50,7 @@ export function Chart({ sessions, pulse = false }: { sessions: Session[]; pulse?
                 .join(' ')}
               fill="none"
               strokeWidth="2.5"
+              strokeDasharray={key === 'diastolic' ? '6 4' : undefined}
             />
             {points.map((p, i) =>
               p[key] === null ? null : (
@@ -62,17 +63,17 @@ export function Chart({ sessions, pulse = false }: { sessions: Session[]; pulse?
             )}
           </g>
         ))}
-        <text x="48" y="204" fontSize="12" fill="#63766c">
+        <text x="48" y="204" fontSize="12" fill="#52667c">
           {points[0].date.slice(0, 10)}
         </text>
-        <text x="550" y="204" textAnchor="end" fontSize="12" fill="#63766c">
+        <text x="550" y="204" textAnchor="end" fontSize="12" fill="#52667c">
           {points[points.length - 1].date.slice(0, 10)}
         </text>
       </svg>
       <figcaption>
         {pulse
           ? 'Пульс · уд/мин'
-          : 'Давление · мм рт. ст. · тёмная линия — верхнее, светлая — нижнее'}
+          : 'Давление · мм рт. ст. · сплошная линия — верхнее, пунктир — нижнее'}
         . Одна точка — среднее сеанса. Исходные значения доступны в журнале.
       </figcaption>
     </figure>

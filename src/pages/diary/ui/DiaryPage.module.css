@@ -1,5 +1,5 @@
 .page {
-  max-width: 1080px;
+  max-width: 1120px;
   margin: auto;
   padding: 28px max(18px, env(safe-area-inset-left)) max(24px, env(safe-area-inset-bottom));
 }
@@ -25,8 +25,8 @@
   color: var(--muted);
 }
 .brand h1 {
-  font-size: clamp(1.35rem, 4vw, 2.2rem);
-  letter-spacing: -0.04em;
+  font-size: clamp(1.35rem, 4vw, 2rem);
+  letter-spacing: -0.025em;
   line-height: 1.15;
   margin: 0;
 }
@@ -73,9 +73,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px 16px;
-  background: #e8eee4;
-  border: 1px solid #d6e0d0;
-  border-radius: 20px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  border-radius: 4px;
   padding: 24px;
 }
 .summary > div:first-child {
@@ -83,19 +84,21 @@
 }
 .summary span {
   display: block;
-  color: #536b59;
+  color: var(--muted);
   font-size: 0.8rem;
   margin-bottom: 8px;
 }
 .summary strong {
   font-size: 2rem;
   font-weight: 500;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.06em;
+  font-family: var(--numeric);
+  font-variant-numeric: tabular-nums;
 }
 .summary p {
   grid-column: 1/-1;
   font-size: 0.75rem;
-  color: #536b59;
+  color: var(--muted);
   margin: 0;
 }
 .sectionTitle {
@@ -122,11 +125,11 @@
   padding: 44px 20px;
   background: white;
   border: 1px dashed var(--line);
-  border-radius: 20px;
+  border-radius: 4px;
 }
 .empty > span {
   font-size: 2.4rem;
-  color: #97ab93;
+  color: var(--accent);
 }
 .empty h3 {
   font-weight: 500;
@@ -144,16 +147,16 @@
 }
 .notice {
   font-size: 0.85rem;
-  color: #346d53;
+  color: #245cba;
 }
 .notice:empty {
   display: none;
 }
 .error {
-  border: 1px solid #c58c73;
-  border-radius: 12px;
+  border: 1px solid #cf8490;
+  border-radius: 4px;
   padding: 12px;
-  background: #fff1e8;
+  background: #fff0f2;
 }
 .error p {
   margin: 0 0 8px;
@@ -161,7 +164,7 @@
 .discard {
   margin-top: 16px;
   background: transparent;
-  color: #955341;
+  color: var(--danger);
 }
 .transfer {
   display: grid;
@@ -176,7 +179,7 @@
 .importConflict {
   padding: 12px;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 4px;
   overflow-wrap: anywhere;
 }
 .importConflict p {
@@ -208,7 +211,7 @@
     grid-column: auto;
   }
   .journal {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 @media (max-width: 360px) {
@@ -255,5 +258,111 @@
   .report p {
     white-space: pre-wrap;
     overflow-wrap: anywhere;
+  }
+}
+
+.header {
+  padding-bottom: 8px;
+}
+.header nav {
+  gap: 4px;
+  border-bottom: 1px solid var(--line);
+}
+.header nav button {
+  border: 0;
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+  color: var(--accent);
+  padding-inline: 12px;
+}
+.header nav button:hover {
+  border-bottom-color: var(--accent);
+  background: #e7eef9;
+}
+.toolbar {
+  border-top: 0;
+  padding-top: 0;
+}
+.summary {
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.summary > div {
+  padding: 20px;
+  min-width: 0;
+}
+.summary > div:first-child {
+  background: #eaf1ff;
+  border-bottom: 1px solid var(--line);
+}
+.summary > div:nth-child(3) {
+  border-left: 1px solid var(--line);
+}
+.summary p {
+  border-top: 1px solid var(--line);
+  padding: 12px 20px;
+}
+.summary strong {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 600;
+}
+.sectionTitle {
+  border-bottom: 2px solid #172b43;
+  padding-bottom: 12px;
+}
+.empty {
+  border-style: solid;
+  text-align: left;
+  padding: 32px;
+}
+.empty > span {
+  display: block;
+  border-left: 3px solid var(--accent);
+  padding-left: 14px;
+}
+.page footer {
+  text-align: left;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+@media (min-width: 700px) {
+  .header nav {
+    position: static;
+    margin-top: 24px;
+  }
+  .brand {
+    margin-top: 28px;
+  }
+  .summary > div:first-child {
+    border-bottom: 0;
+  }
+  .summary > div + div {
+    border-left: 1px solid var(--line);
+  }
+  .summary strong {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 360px) {
+  .summary {
+    padding: 0;
+  }
+  .summary > div {
+    padding: 16px;
+  }
+  .header nav button {
+    padding-inline: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .header nav button {
+    font-size: 0.875rem;
+    padding-inline: 4px;
   }
 }
