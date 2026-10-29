@@ -1,0 +1,259 @@
+.page {
+  max-width: 1080px;
+  margin: auto;
+  padding: 28px max(18px, env(safe-area-inset-left)) max(24px, env(safe-area-inset-bottom));
+}
+.header {
+  margin-bottom: 28px;
+}
+.back {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+.brand p {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin: 0 0 6px;
+  color: var(--muted);
+}
+.brand h1 {
+  font-size: clamp(1.35rem, 4vw, 2.2rem);
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  margin: 0;
+}
+.intro {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.header nav button {
+  background: transparent;
+}
+.toolbar {
+  display: flex;
+  align-items: end;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+.toolbar label,
+.transfer label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.toolbar > button {
+  margin-left: auto;
+}
+.dates {
+  display: flex;
+  gap: 10px;
+  min-width: 0;
+}
+.dates label {
+  min-width: 0;
+}
+.summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 16px;
+  background: #e8eee4;
+  border: 1px solid #d6e0d0;
+  border-radius: 20px;
+  padding: 24px;
+}
+.summary > div:first-child {
+  grid-column: 1/-1;
+}
+.summary span {
+  display: block;
+  color: #536b59;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+.summary strong {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+}
+.summary p {
+  grid-column: 1/-1;
+  font-size: 0.75rem;
+  color: #536b59;
+  margin: 0;
+}
+.sectionTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin: 28px 0 16px;
+}
+.sectionTitle h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+.sectionTitle span {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.journal {
+  display: grid;
+  gap: 16px;
+}
+.empty {
+  text-align: center;
+  padding: 44px 20px;
+  background: white;
+  border: 1px dashed var(--line);
+  border-radius: 20px;
+}
+.empty > span {
+  font-size: 2.4rem;
+  color: #97ab93;
+}
+.empty h3 {
+  font-weight: 500;
+}
+.empty p {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.page footer {
+  margin-top: 36px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.notice {
+  font-size: 0.85rem;
+  color: #346d53;
+}
+.notice:empty {
+  display: none;
+}
+.error {
+  border: 1px solid #c58c73;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fff1e8;
+}
+.error p {
+  margin: 0 0 8px;
+}
+.discard {
+  margin-top: 16px;
+  background: transparent;
+  color: #955341;
+}
+.transfer {
+  display: grid;
+  gap: 14px;
+}
+.transfer h3 {
+  margin: 14px 0 0;
+}
+.transfer p {
+  margin: 0;
+}
+.importConflict {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+}
+.importConflict p {
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+.report {
+  display: none;
+}
+@media (min-width: 700px) {
+  .page {
+    padding-top: 40px;
+  }
+  .header {
+    position: relative;
+  }
+  .header nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .brand {
+    margin-top: 42px;
+  }
+  .summary {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+  .summary > div:first-child {
+    grid-column: auto;
+  }
+  .journal {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 360px) {
+  .toolbar {
+    gap: 12px;
+  }
+  .toolbar > button {
+    margin-left: 0;
+    flex: 1;
+  }
+  .dates {
+    width: 100%;
+  }
+  .summary {
+    padding: 18px;
+  }
+  .header nav button {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+}
+@media print {
+  .page {
+    display: none;
+  }
+  .report {
+    display: block;
+    color: #000;
+    font:
+      12pt Georgia,
+      serif;
+  }
+  .report h1 {
+    font-size: 20pt;
+  }
+  .report h2 {
+    font-size: 13pt;
+  }
+  .report article {
+    break-inside: avoid;
+    border-top: 1px solid #aaa;
+    padding: 8px 0;
+  }
+  .report p {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+}

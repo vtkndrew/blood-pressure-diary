@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+test-results/
+test-results-pwa/
+playwright-report/
+package-lock.json
+# Captured saves are compatibility fixtures, not authored source.
+src/entities/game/model/fixtures/

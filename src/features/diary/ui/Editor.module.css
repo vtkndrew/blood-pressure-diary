@@ -1,0 +1,57 @@
+.fields {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+.fields label {
+  display: grid;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.fields label > span,
+.hint {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.reading {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+  margin: 0;
+  min-width: 0;
+}
+.reading legend {
+  font-size: 0.85rem;
+  padding: 0 6px;
+}
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.numbers input {
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 12px 4px;
+}
+.reading small {
+  display: block;
+  margin: 12px 0;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+.reading button {
+  font-size: 0.8rem;
+}
+.hint {
+  margin: 0;
+}
+.fields textarea {
+  resize: vertical;
+  min-height: 80px;
+}

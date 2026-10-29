@@ -1,0 +1,80 @@
+.card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 22px;
+  min-width: 0;
+}
+.heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.heading h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+.heading > span,
+.caption {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.mean {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+.mean strong {
+  font-size: 1.65rem;
+  letter-spacing: -0.05em;
+}
+.mean > span {
+  font-size: 0.8rem;
+}
+.mean .pulse {
+  margin-left: auto;
+  font-size: 1.15rem;
+  color: #ad6855;
+}
+.pulse small {
+  font-size: 0.75rem;
+}
+.caption {
+  margin: 2px 0 16px;
+}
+.readings {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+}
+.readings li {
+  font-size: 0.85rem;
+  background: #f4f6f3;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.readings span {
+  color: var(--muted);
+}
+.note {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
+}
+.actions button {
+  background: transparent;
+  font-size: 0.85rem;
+  padding: 8px 12px;
+}
+.actions button:last-child {
+  color: #955341;
+}
