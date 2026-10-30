@@ -6,11 +6,6 @@
 .header {
   margin-bottom: 28px;
 }
-.back {
-  font-size: 0.8rem;
-  color: var(--muted);
-  text-decoration: none;
-}
 .brand {
   display: flex;
   align-items: center;

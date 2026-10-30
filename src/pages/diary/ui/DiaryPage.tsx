@@ -224,9 +224,6 @@ export function DiaryPage() {
         }}
       >
         <header className={styles.header}>
-          <a href="https://vtkndrew.github.io/" className={styles.back}>
-            ← Все проекты
-          </a>
           <div className={styles.brand}>
             <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" width="48" height="48" />
             <div>
